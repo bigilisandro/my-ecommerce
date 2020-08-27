@@ -13,6 +13,9 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import CartIcon from './CartIcon'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faOpencart } from '@fortawesome/free-brands-svg-icons'
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,15 +25,17 @@ const NavBar = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">
+          <CartIcon />
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">Sale!</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="https://github.com/reactstrap/reactstrap">New In</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -50,7 +55,10 @@ const NavBar = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          <NavbarText>
+            <FontAwesomeIcon icon={faOpencart} size="1x" className="mr-3" />
+            Cart
+          </NavbarText>
         </Collapse>
       </Navbar>
     </div>
