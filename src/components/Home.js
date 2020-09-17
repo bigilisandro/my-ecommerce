@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Jumbotron, Button, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle } from 'reactstrap';
+import ItemCount from './ItemCount.js' 
 
 const Home = (props) => {
   return (
@@ -17,6 +18,7 @@ const Home = (props) => {
                 </p>
             </Jumbotron>
         </Col>
+        <ItemCount />
       </Row>
       <Row>
         <Col>
